@@ -3,28 +3,27 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
-	
+
 <struts>
-    <include file="struts-default.xml"/>
-    <package name="default" extends="struts-default">
-        <action name="">
-            <result>/pages/index.jsp</result>
-        </action>
-        
-       <action name="testAction" class="com.rushabh.Action.InitAction">
-          <result name="input">/pages/index.jsp</result>
-          <result name="success">/pages/success.jsp</result>
-          <result name="error">/pages/index.jsp</result>
-       </action>
-       
-       <action name="SaveAction" class="com.rushabh.Action.InitAction" method="SaveAction">
-          <result name="input">/pages/index.jsp</result>
-       </action>
-       
-       <action name="ShowAction" class="com.rushabh.Action.InitAction" method="ShowAction">
-          <result name="input">/pages/index.jsp</result>
-       </action>
-       
-       
-    </package>
+	<include file="struts-default.xml" />
+
+	<package name="default" extends="struts-default, json-default">
+
+		<action name="SaveAction" class="com.rushabh.Action.InitAction" method="SaveAction">
+			<result type="json"></result>
+		</action>
+
+		<action name="ShowAction" class="com.rushabh.Action.InitAction" method="ShowAction">
+			<result type="json"></result>
+		</action>
+
+		<action name="DeleteAction" class="com.rushabh.Action.InitAction" method="DeleteAction">
+			<result type="json"></result>
+		</action>
+
+		<action name="ViewDetailsAction" class="com.rushabh.Action.InitAction" method="ViewDetailsAction">
+			<result type="json"></result>
+		</action>
+
+	</package>
 </struts>
